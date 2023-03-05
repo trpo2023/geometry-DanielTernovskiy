@@ -27,7 +27,8 @@ int checkFigure(char* str)
     return ret;
 }
 
-int checkArguments(char* str) {
+int checkArguments(char* str)
+{
     int ret = 0;
     int count = 0;
     for (int i = 7; str[i] != ',' && i < strlen(str); i++) {
@@ -73,8 +74,8 @@ int checkArguments(char* str) {
     return ret;
 }
 
-int checkEnd(char* str) {
-    
+int checkEnd(char* str)
+{
     int ret = 1, firstBracket = 0;
     int endingSymbol;
     if (str[strlen(str) - 1] == '\n')
@@ -90,6 +91,20 @@ int checkEnd(char* str) {
     if (firstBracket == endingSymbol)
         ret = 0;
     return ret;
+}
+
+int printErrors(char* str, int countObj)
+{
+    printf("Figure %d:\n", countObj);
+    if (checkFigure(str))
+        printf("Incorrect input of object name\n\n");
+    else if (checkArguments(str))
+        return 0;
+    else if (isEnd(str))
+        printf("Wrong final symbol\n\n");
+    else
+        printf("%s\n", str);
+    return 0;
 }
 
 int main()
