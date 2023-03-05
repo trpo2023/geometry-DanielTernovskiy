@@ -93,14 +93,14 @@ int checkEnd(char* str)
     return ret;
 }
 
-int printErrors(char* str, int countObj)
+int printErrors(char* str, int countFigures)
 {
-    printf("Figure %d:\n", countObj);
+    printf("Figure %d:\n", countFigures);
     if (checkFigure(str))
         printf("Incorrect input of object name\n\n");
     else if (checkArguments(str))
         return 0;
-    else if (isEnd(str))
+    else if (checkEnd(str))
         printf("Wrong final symbol\n\n");
     else
         printf("%s\n", str);
@@ -110,7 +110,7 @@ int printErrors(char* str, int countObj)
 int main()
 {
     FILE* file;
-    file = fopen("example.txt", "r");
+    file = fopen("input.txt", "r");
     char str1[SIZE];
     int countFigures = 0;
     while (fgets(str1, SIZE, file)) {
