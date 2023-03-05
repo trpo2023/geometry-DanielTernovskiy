@@ -73,6 +73,24 @@ int checkArguments(char* str) {
     return ret;
 }
 
+int checkEnd(char* str) {
+    
+    int ret = 1, firstBracket = 0;
+    int endingSymbol;
+    if (str[strlen(str) - 1] == '\n')
+        endingSymbol = strlen(str) - 2;
+    else
+        endingSymbol = strlen(str) - 1;
+    for (int i = 0; i < strlen(str); i++) {
+        if (str[i] == ')') {
+            firstBracket = i;
+            break;
+        }
+    }
+    if (firstBracket == endingSymbol)
+        ret = 0;
+    return ret;
+}
 
 int main()
 {
