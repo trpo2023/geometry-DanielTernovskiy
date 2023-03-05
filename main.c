@@ -34,7 +34,7 @@ int checkArguments(char* str)
     for (int i = 7; str[i] != ',' && i < strlen(str); i++) {
         if ((str[i] != '.' && str[i] != ' ')
             && !(str[i] >= 48 && str[i] <= 57)) {
-            printf("Object coordinates entered incorrectly\n\n");
+            printf("Figure coordinates entered incorrectly\n\n");
             ret++;
             return 1;
         }
@@ -44,7 +44,7 @@ int checkArguments(char* str)
             count += 2;
     }
     if (count + 1 != 2) {
-        printf("Object coordinates entered incorrectly\n\n");
+        printf("Figure coordinates entered incorrectly\n\n");
         ret++;
         return ret;
     }
@@ -58,7 +58,7 @@ int checkArguments(char* str)
     for (; str[index] != ')' && index < strlen(str); index++) {
         if ((str[index] != '.' && str[index] != ' ')
             && !(str[index] >= 48 && str[index] <= 57)) {
-            printf("Object radius entered incorrectly\n\n");
+            printf("Figure radius entered incorrectly\n\n");
             ret++;
             return 1;
         }
@@ -68,7 +68,7 @@ int checkArguments(char* str)
             count += 2;
     }
     if (count != 1) {
-        printf("Object radius entered incorrectly\n\n");
+        printf("Figure radius entered incorrectly\n\n");
         ret++;
     }
     return ret;
