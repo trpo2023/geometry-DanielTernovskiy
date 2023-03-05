@@ -1,11 +1,17 @@
+#include <ctype.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <ctype.h>
 
 #define SIZE 100
 
-int main() {
-    
+void strtolower(char* str)
+{
+    for (int i = 0; i < strlen(str); i++)
+        str[i] = tolower(str[i]);
+}
+
+int main()
+{
     FILE* file;
     file = fopen("example.txt", "r");
     char str1[SIZE];
