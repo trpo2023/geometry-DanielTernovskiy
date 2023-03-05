@@ -1,10 +1,10 @@
-all: HelloWorld
+all: main
 
-HelloWorld: HelloWorld.c
-	gcc -Wall -Werror -o HelloWorld HelloWorld.c
+main: main.c
+	gcc -Wall -Werror -o main main.c
 
 clean:
-	rm HelloWorld
+	rm main
 
 run:
-	./HelloWorld
+	./main
