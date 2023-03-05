@@ -98,7 +98,7 @@ int printErrors(char* str, int countFigures)
 {
     printf("Figure %d:\n", countFigures);
     if (checkFigure(str))
-        printf("Incorrect input of object name\n\n");
+        printf("Incorrect input of figure name\n\n");
     else if (checkArguments(str))
         return 0;
     else if (checkEnd(str))
