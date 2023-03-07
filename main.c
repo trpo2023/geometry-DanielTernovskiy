@@ -97,14 +97,14 @@ int checkEnd(char* str)
 int printErrors(char* str, int countFigures)
 {
     printf("Figure %d:\n", countFigures);
+    printf("%s", str);
     if (checkFigure(str))
         printf("Incorrect input of figure name\n\n");
     else if (checkArguments(str))
         return 0;
     else if (checkEnd(str))
         printf("Wrong final symbol\n\n");
-    else
-        printf("%s\n", str);
+   
     return 0;
 }
 
@@ -112,6 +112,10 @@ int main()
 {
     FILE* file;
     file = fopen("input.txt", "r");
+    if (file == NULL) {
+        printf("Error of oppening file!");
+        return 1;
+    }
     char str1[SIZE];
     int countFigures = 0;
     while (fgets(str1, SIZE, file)) {
