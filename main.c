@@ -124,5 +124,6 @@ int main()
         printErrors(str1, countFigures);
     }
     fclose(file);
+    printf("\n");
     return 0;
 }
