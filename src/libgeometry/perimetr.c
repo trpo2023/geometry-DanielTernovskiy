@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <string.h>
+#include <libgeometry/perimetr.h>
 
 #define PI 3.141592
 

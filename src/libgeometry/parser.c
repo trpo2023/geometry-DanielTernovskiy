@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <libgeometry/parser.h>
 
 int checkArguments(char* str)
 {

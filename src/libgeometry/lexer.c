@@ -1,4 +1,5 @@
 #include <string.h>
+#include <libgeometry/lexer.h>
 
 #define SIZE 100
 
