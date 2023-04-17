@@ -1,0 +1,1 @@
+float calculateArea(char *str); 

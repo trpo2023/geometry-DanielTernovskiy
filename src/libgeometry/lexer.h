@@ -1,0 +1,1 @@
+int checkFigure(char *str);

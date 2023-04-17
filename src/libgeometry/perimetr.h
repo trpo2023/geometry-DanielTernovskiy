@@ -1,0 +1,1 @@
+float calculatePerimetr(char *str);
