@@ -1,12 +1,11 @@
 #include <stdlib.h>
 #include <string.h>
+#include <math.h>
 #include <libgeometry/perimetr.h>
-
-#define PI 3.141592
 
 float calculatePerimetr(char *str) 
 {
-    int i = 0;
+    size_t i = 0;
     char *temp = (char*) malloc (sizeof(char));
     for (i = 0; str[i] != ','; i++);
     i++;
@@ -16,5 +15,6 @@ float calculatePerimetr(char *str)
         temp[index++] = str[i];
         temp = (char*) realloc(temp, (index + 1) * sizeof(char));
     }
-    return 2 * PI * atof(temp);
+    return 2 * M_PI * atof(temp);
 }
+

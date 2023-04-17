@@ -11,13 +11,15 @@ int main()
 {
     FILE* file;
     file = fopen("input.txt", "r");
-    if (file == NULL) {
+    if (file == NULL) 
+    {
         printf("Error of oppening file!");
         return 1;
     }
     char str1[SIZE];
     int countFigures = 0;
-    while (fgets(str1, SIZE, file)) {
+    while (fgets(str1, SIZE, file)) 
+    {
         countFigures++;
         printErrors(str1, countFigures);
     }

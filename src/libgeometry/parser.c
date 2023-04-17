@@ -1,12 +1,15 @@
 #include <stdio.h>
 #include <string.h>
 #include <libgeometry/parser.h>
+#include <libgeometry/lexer.h>
+#include <libgeometry/area.h>
+#include <libgeometry/perimetr.h>
 
 int checkArguments(char* str)
 {
     int ret = 0;
     int count = 0;
-    for (int i = 7; str[i] != ',' && i < strlen(str); i++) 
+    for (size_t i = 7; str[i] != ',' && i < strlen(str); i++) 
     {
         if ((str[i] != '.' && str[i] != ' ') && !(str[i] >= 48 && str[i] <= 57)) 
         {
@@ -27,8 +30,8 @@ int checkArguments(char* str)
         return ret;
     }
     
-    int index = 0;
-    for (int i = 0; i != strlen(str); i++) 
+    size_t index = 0;
+    for (size_t i = 0; i != strlen(str); i++) 
     {
         if (str[i] == ',') 
         {
@@ -68,7 +71,7 @@ int checkEnd(char* str)
     else
         endingSymbol = strlen(str) - 1;
     
-    for (int i = 0; i < strlen(str); i++) 
+    for (size_t i = 0; i < strlen(str); i++) 
     {
         if (str[i] == ')') 
         {
