@@ -5,7 +5,6 @@
 
 float calculatePerimetr(char *str) 
 {
-
     int i = 0;
     char *temp = (char*) malloc (sizeof(char));
     for (i = 0; str[i] != ','; i++);
