@@ -16,5 +16,5 @@ float calculateArea(char* str)
         temp[index++] = str[i];
         temp = (char*)realloc(temp, (index + 1) * sizeof(char));
     }
-    return PI * atof(temp) * atof(temp);
+    return (PI * atof(temp) * atof(temp));
 }
