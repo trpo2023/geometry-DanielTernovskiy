@@ -10,9 +10,10 @@ int checkArguments(char* str)
 {
     int ret = 0;
     int count = 0;
-    for (size_t i = 7; str[i] != ',' && i < strlen(str); i++) {
-        if ((str[i] != '.' && str[i] != ' ')
-            && !(str[i] >= 48 && str[i] <= 57)) {
+    for (size_t i = 7; str[i] != ',' && i < strlen(str); i++) 
+    {
+        if ((str[i] != '.' && str[i] != ' ') && !(str[i] >= 48 && str[i] <= 57)) 
+        {
             printf("Figure coordinates entered incorrectly\n\n");
             ret++;
             return 1;
@@ -23,23 +24,26 @@ int checkArguments(char* str)
             count += 2;
     }
 
-    if (count + 1 != 2) {
+    if (count + 1 != 2) 
+    {
         printf("Figure coordinates entered incorrectly\n\n");
         ret++;
         return ret;
     }
 
     size_t index = 0;
-    for (size_t i = 0; i != strlen(str); i++) {
+    for (size_t i = 0; i != strlen(str); i++) 
+    {
         if (str[i] == ',') {
             index = i + 1;
             i = strlen(str) - 1;
         }
     }
 
-    for (; str[index] != ')' && index < strlen(str); index++) {
-        if ((str[index] != '.' && str[index] != ' ')
-            && !(str[index] >= 48 && str[index] <= 57)) {
+    for (; str[index] != ')' && index < strlen(str); index++) 
+    {
+        if ((str[index] != '.' && str[index] != ' ') && !(str[index] >= 48 && str[index] <= 57)) 
+        {
             printf("Figure radius entered incorrectly\n\n");
             ret++;
             return 1;
@@ -50,7 +54,8 @@ int checkArguments(char* str)
             count += 2;
     }
 
-    if (count != 1) {
+    if (count != 1) 
+    {
         printf("Figure radius entered incorrectly\n\n");
         ret++;
     }
@@ -66,7 +71,8 @@ int checkEnd(char* str)
     else
         endingSymbol = strlen(str) - 1;
 
-    for (size_t i = 0; i < strlen(str); i++) {
+    for (size_t i = 0; i < strlen(str); i++) 
+    {
         if (str[i] == ')') {
             firstBracket = i;
             break;
@@ -81,16 +87,19 @@ int checkEnd(char* str)
 int printErrors(char* str, int countFigures)
 {
     printf("Figure %d:\n", countFigures);
-    if (checkFigure(str)) {
+    if (checkFigure(str)) 
+    {
         printf("%s", str);
         printf("Incorrect input of figure name\n\n");
     }
 
-    else if (checkArguments(str)) {
+    else if (checkArguments(str)) 
+    {
         return 0;
     }
 
-    else if (checkEnd(str)) {
+    else if (checkEnd(str)) 
+    {
         printf("%s", str);
         printf("Wrong final symbol\n\n");
     }

@@ -18,7 +18,8 @@ int main()
     }
     char str1[SIZE];
     int countFigures = 0;
-    while (fgets(str1, SIZE, file)) {
+    while (fgets(str1, SIZE, file)) 
+    {
         countFigures++;
         printErrors(str1, countFigures);
     }
