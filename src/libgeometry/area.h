@@ -1,3 +1,3 @@
 #pragma once
 
-float calculateArea(char *);
+float calculateArea(char*);
