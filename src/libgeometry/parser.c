@@ -105,9 +105,6 @@ int printErrors(char* str, int countFigures)
     }
 
     else
-        printf("%s\n\tarea = %f\n\tperimetr = %f",
-               str,
-               calculateArea(str),
-               calculatePerimetr(str));
+        printf("%s\n\tarea = %f\n\tperimetr = %f", str, calculateArea(str), calculatePerimetr(str));
     return 0;
 }

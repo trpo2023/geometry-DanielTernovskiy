@@ -1,7 +1,8 @@
 #include <libgeometry/area.h>
-#include <math.h>
 #include <stdlib.h>
 #include <string.h>
+
+#define PI 3.14159265359
 
 float calculateArea(char* str)
 {
@@ -15,5 +16,5 @@ float calculateArea(char* str)
         temp[index++] = str[i];
         temp = (char*)realloc(temp, (index + 1) * sizeof(char));
     }
-    return M_PI * atof(temp) * atof(temp);
+    return PI * atof(temp) * atof(temp);
 }
