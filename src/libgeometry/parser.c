@@ -81,8 +81,8 @@ int checkEnd(char* str)
 int printErrors(char* str, int countFigures)
 {
     printf("Figure %d:\n", countFigures);
+    printf("%s", str);
     if (checkFigure(str)) {
-        printf("%s", str);
         printf("Incorrect input of figure name\n\n");
     }
 
@@ -91,13 +91,11 @@ int printErrors(char* str, int countFigures)
     }
 
     else if (checkEnd(str)) {
-        printf("%s", str);
         printf("Wrong final symbol\n\n");
     }
 
     else
-        printf("%s\n\tarea = %f\n\tperimetr = %f",
-               str,
+        printf("\n\tarea = %f\n\tperimetr = %f",
                calculateArea(str),
                calculatePerimetr(str));
     return 0;
