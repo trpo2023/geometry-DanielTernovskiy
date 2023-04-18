@@ -1,9 +1,10 @@
+#include <stdio.h>
+#include <stdlib.h>
+
 #include <libgeometry/area.h>
 #include <libgeometry/lexer.h>
 #include <libgeometry/parser.h>
 #include <libgeometry/perimetr.h>
-#include <stdio.h>
-#include <stdlib.h>
 
 #define SIZE 100
 
