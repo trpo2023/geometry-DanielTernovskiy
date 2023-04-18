@@ -17,7 +17,7 @@ float calculateArea(char* str)
         temp[index++] = str[i];
         temp = (char*)realloc(temp, (index + 1) * sizeof(char));
     }
-    float perimetr = M_PI * atof(temp) * atof(temp);
+    float area = M_PI * atof(temp) * atof(temp);
     free(temp);
-    return perimetr;
+    return area;
 }

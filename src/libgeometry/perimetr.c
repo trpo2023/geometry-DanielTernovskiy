@@ -17,5 +17,7 @@ float calculatePerimetr(char* str)
         temp[index++] = str[i];
         temp = (char*)realloc(temp, (index + 1) * sizeof(char));
     }
-    return (2 * M_PI * atof(temp));
+    float perimetr = 2 * M_PI * atof(temp);
+    free(temp);
+    return perimetr;
 }
