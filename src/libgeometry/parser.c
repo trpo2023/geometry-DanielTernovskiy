@@ -8,13 +8,10 @@
 
 int checkArguments(char* str)
 {
-    int ret = 0;
     int count = 0;
     for (size_t i = 7; str[i] != ',' && i < strlen(str); i++) {
         if ((str[i] != '.' && str[i] != ' ')
             && !(str[i] >= 48 && str[i] <= 57)) {
-            printf("Figure coordinates entered incorrectly\n\n");
-            ret++;
             return 1;
         }
         if (str[i] >= 48 && str[i] <= 57 && str[i + 1] == ' ')
@@ -24,9 +21,7 @@ int checkArguments(char* str)
     }
 
     if (count + 1 != 2) {
-        printf("Figure coordinates entered incorrectly\n\n");
-        ret++;
-        return ret;
+        return 1;
     }
 
     size_t index = 0;
@@ -40,9 +35,7 @@ int checkArguments(char* str)
     for (; str[index] != ')' && index < strlen(str); index++) {
         if ((str[index] != '.' && str[index] != ' ')
             && !(str[index] >= 48 && str[index] <= 57)) {
-            printf("Figure radius entered incorrectly\n\n");
-            ret++;
-            return 1;
+            return 2;
         }
         if (str[index] >= 48 && str[index] <= 57 && str[index + 1] == ' ')
             count++;
@@ -51,10 +44,9 @@ int checkArguments(char* str)
     }
 
     if (count != 1) {
-        printf("Figure radius entered incorrectly\n\n");
-        ret++;
+        return 2;
     }
-    return ret;
+    return 0;
 }
 
 int checkEnd(char* str)
@@ -82,11 +74,17 @@ int printErrors(char* str, int countFigures)
 {
     printf("Figure %d:\n", countFigures);
     printf("%s", str);
-    if (checkFigure(str)) {
+    if (checkFigure(str) == 1) {
         printf("Incorrect input of figure name\n\n");
     }
 
-    else if (checkArguments(str)) {
+    else if (checkArguments(str) == 1) {
+        printf("Figure coordinates entered incorrectly\n\n");
+        return 0;
+    }
+    
+    else if (checkArguments(str) == 2) {
+        printf("Figure radius entered incorrectly\n\n");
         return 0;
     }
 
