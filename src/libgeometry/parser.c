@@ -82,7 +82,7 @@ int printErrors(char* str, int countFigures)
         printf("Figure coordinates entered incorrectly\n\n");
         return 0;
     }
-    
+
     else if (checkArguments(str) == 2) {
         printf("Figure radius entered incorrectly\n\n");
         return 0;
