@@ -51,7 +51,7 @@ int checkArguments(char* str)
 
 int checkEnd(char* str)
 {
-    int ret = 1, firstBracket = 0;
+    int firstBracket = 0;
     int endingSymbol;
     if (str[strlen(str) - 1] == '\n')
         endingSymbol = strlen(str) - 2;
@@ -66,8 +66,8 @@ int checkEnd(char* str)
     }
 
     if (firstBracket == endingSymbol)
-        ret = 0;
-    return ret;
+        return 0;
+    return 1;
 }
 
 int printErrors(char* str, int countFigures)
@@ -88,7 +88,7 @@ int printErrors(char* str, int countFigures)
         return 0;
     }
 
-    else if (checkEnd(str)) {
+    else if (checkEnd(str) == 1) {
         printf("Wrong final symbol\n\n");
     }
 
