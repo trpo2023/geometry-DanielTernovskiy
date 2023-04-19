@@ -83,7 +83,7 @@ CTEST (check_end_bracket, test9)
     ASSERT_EQUAL(expected, result);
 }
 
-CTEST (check_incorrect_arg, test10)
+CTEST (check_incorrect_end_bracket, test10)
 {
     char* str = "circle(2.0 2.0, 3.0(";
     const int expected = 1;
