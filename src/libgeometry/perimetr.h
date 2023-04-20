@@ -1,3 +1,3 @@
 #pragma once
 
-float calculatePerimetr(char*);
+double calculatePerimetr(char*);

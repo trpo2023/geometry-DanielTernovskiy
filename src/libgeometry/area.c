@@ -4,9 +4,14 @@
 #include <math.h>
 
 #include <libgeometry/area.h>
+#include <libgeometry/parser.h>
 
-float calculateArea(char* str)
+double calculateArea(char* str)
 {
+    if (checkArguments(str) == 2) {
+        return -1;
+    }
+
     size_t i = 0;
     char* temp = (char*)malloc(sizeof(char));
     for (i = 0; str[i] != ','; i++)
@@ -17,7 +22,7 @@ float calculateArea(char* str)
         temp[index++] = str[i];
         temp = (char*)realloc(temp, (index + 1) * sizeof(char));
     }
-    float area = M_PI * atof(temp) * atof(temp);
+    double area = M_PI * atof(temp) * atof(temp);
     free(temp);
     return area;
 }
