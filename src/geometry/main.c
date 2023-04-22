@@ -7,7 +7,6 @@
 #include <libgeometry/parser.h>
 #include <libgeometry/perimetr.h>
 
-
 #define SIZE 100
 
 int main()
