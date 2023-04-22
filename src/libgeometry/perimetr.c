@@ -6,10 +6,9 @@
 #include <libgeometry/parser.h>
 #include <libgeometry/perimetr.h>
 
-
 double calculatePerimetr(char* str)
 {
-    if (checkArguments(str) == 2) {
+    if (checkArguments(str) == 3) {
         return -1;
     }
 

@@ -3,8 +3,10 @@
 
 #include <libgeometry/area.h>
 #include <libgeometry/lexer.h>
+#include <libgeometry/output.h>
 #include <libgeometry/parser.h>
 #include <libgeometry/perimetr.h>
+
 
 #define SIZE 100
 
