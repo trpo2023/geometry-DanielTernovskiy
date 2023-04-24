@@ -1,4 +1,4 @@
 #pragma once
 
-int printErrors(char*, int);
-void printStr(char*);
+int isCircle(char*);
+void printError(char*, int, int);

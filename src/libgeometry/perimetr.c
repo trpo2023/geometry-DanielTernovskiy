@@ -4,7 +4,6 @@
 #include <math.h>
 
 #include <libgeometry/parser.h>
-#include <libgeometry/perimetr.h>
 
 double calculatePerimetr(char* str)
 {

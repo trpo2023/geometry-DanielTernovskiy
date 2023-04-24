@@ -1,7 +1,5 @@
 #include <string.h>
 
-#include <libgeometry/lexer.h>
-
 #define SIZE 100
 
 int checkFigure(char* str)
