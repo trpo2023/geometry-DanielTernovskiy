@@ -1,50 +1,47 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <libgeometry/area.h>
 #include <libgeometry/lexer.h>
 #include <libgeometry/parser.h>
-#include <libgeometry/perimetr.h>
 
-void printStr(char* str)
+int isCircle(char* str)
 {
-    for (size_t i = 0; i < strlen(str); i++) {
-        if (str[i] == '\n')
-            break;
-        printf("%c", str[i]);
-    }
+    if (checkFigure(str) == 1)
+        return 1;
+
+    if (checkArguments(str) == 2)
+        return 2;
+
+    if (checkArguments(str) == 3)
+        return 3;
+
+    if (checkEnd(str) == 4)
+        return 4;
+
+    if (checkEnd(str) == 5)
+        return 5;
+
+    return 0;
 }
 
-int printErrors(char* str, int countFigures)
+void printError(char* line, int check, int num)
 {
-    printf("\nFigure %d:\n", countFigures);
-    printStr(str);
-    if (checkFigure(str) == 1) {
-        printf("\nIncorrect input of figure name\n\n");
+    printf("\nFigure %d.\n %s", num, line);
+    switch (check) {
+    case 1:
+        printf(" Incorrect input of figure name\n");
+        break;
+    case 2:
+        printf(" Figure coordinates entered incorrectly\n");
+        break;
+    case 3:
+        printf(" Figure radius entered incorrectly\n");
+        break;
+    case 4:
+        printf(" Wrong final symbol\n");
+        break;
+    case 5:
+        printf(" Wrong final symbol\n");
+        break;
     }
-
-    else if (checkArguments(str) == 2) {
-        printf("\nFigure coordinates entered incorrectly\n\n");
-        return 0;
-    }
-
-    else if (checkArguments(str) == 3) {
-        printf("\nFigure radius entered incorrectly\n\n");
-        return 0;
-    }
-
-    else if (checkEnd(str) == 4) {
-        printf("\nWrong final symbol\n\n");
-        return 0;
-    }
-
-    else if (checkEnd(str) == 5) {
-        printf("\nWrong final symbol\n\n");
-    }
-
-    else
-        printf("\n\tarea = %f\n\tperimetr = %f\n",
-               calculateArea(str),
-               calculatePerimetr(str));
-    return 0;
 }
