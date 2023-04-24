@@ -1,11 +1,6 @@
 #include <stdio.h>
 #include <string.h>
 
-#include <libgeometry/area.h>
-#include <libgeometry/lexer.h>
-#include <libgeometry/parser.h>
-#include <libgeometry/perimetr.h>
-
 int checkArguments(char* str)
 {
     int count = 0;
