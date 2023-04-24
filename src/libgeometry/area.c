@@ -3,7 +3,6 @@
 #define _USE_MATH_DEFINES
 #include <math.h>
 
-#include <libgeometry/area.h>
 #include <libgeometry/parser.h>
 
 double calculateArea(char* str)
