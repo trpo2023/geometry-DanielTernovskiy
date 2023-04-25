@@ -47,7 +47,7 @@ $(OBJ_DIR)/%.o: %.c
 .PHONY: test
 test: $(TEST_PATH)
 
-$(TEST_PATH): $(TEST_OBJ_PATH)/main.o $(TEST_OBJ_PATH)/test.o $(LIB_OBJECTS)
+$(TEST_PATH): $(TEST_OBJ_PATH)/main.o $(TEST_OBJ_PATH)/test.o $(LIB_PATH)
 	$(CC) $(CFLAGS) $(CFLAGS_TEST) -o $@ $^ -lm
 	
 $(OBJ)/$(TEST_DIR)/%.o: $(TEST_DIR)/main.c $(TEST_DIR)/test.c $(LIB_OBJECTS)
