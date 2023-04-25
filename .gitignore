@@ -1,0 +1,6 @@
+*.a
+*.o
+*.d
+main
+input.txt
+bin/
